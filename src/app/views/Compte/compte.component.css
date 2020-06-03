@@ -1,0 +1,27 @@
+.logo{
+  
+  position: center;
+  top: -32px;
+  margin-bottom: -68px;
+  height: 50px;
+  width: 50%;
+  margin: 2% ;
+}
+
+
+  table {
+    width: 100%;
+  }
+
+ div .example-button-row button {
+    
+    width: 20%;
+    left: 80%;
+    top: -80px;
+    margin-inline-end: auto;
+  }
+
+
+   table .example-button-row button {
+    margin-right: 20px;
+  }

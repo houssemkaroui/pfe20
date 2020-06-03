@@ -5,100 +5,71 @@ export const navItems: INavData[] = [
     name: 'Dashboard',
     url: '/dashboard',
     icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
-  },
-  {
-    title: true,
-    name: 'Theme'
-  },
-  {
-    name: 'Colors',
-    url: '/theme/colors',
-    icon: 'icon-drop'
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    icon: 'icon-pencil'
-  },
-  {
-    title: true,
-    name: 'Components'
-  },
-  {
-    name: 'Base',
-    url: '/base',
-    icon: 'icon-puzzle',
-    children: [
-      {
-        name: 'Cards',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Carousels',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Collapses',
-        url: '/base/collapses',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Forms',
-        url: '/base/forms',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Navbars',
-        url: '/base/navbars',
-        icon: 'icon-puzzle'
 
-      },
-      {
-        name: 'Pagination',
-        url: '/base/paginations',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Popovers',
-        url: '/base/popovers',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Progress',
-        url: '/base/progress',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Switches',
-        url: '/base/switches',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tables',
-        url: '/base/tables',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tabs',
-        url: '/base/tabs',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Tooltips',
-        url: '/base/tooltips',
-        icon: 'icon-puzzle'
-      }
+  },
+  // {
+  //   title: true,
+  //   name: 'Theme'
+  // },
+  {
+    name: 'Administrateur',
+    url: '/administrateur',
+    icon: 'icon-drop',
+    children:[
+     {
+       name:'Utilisateur',
+       url: '/administrateur/utilisateur',
+       icon: 'icon-puzzle'
+     },
+     {
+       name:'Send Notification',
+       url:'/administrateur/Send Notification',
+       icon: 'icon-puzzle'
+     },
+     {
+       name:'FB Setting',
+       url:'/administrateur/FB Setting',
+       icon: 'icon-puzzle'
+     }
     ]
   },
+
   {
-    name: 'Buttons',
-    url: '/buttons',
+    name: 'Visiteur',
+    url: '/Visiteur',
+    icon: 'icon-puzzle',
+    // children: [
+    //   {
+    //     name: 'Cards',
+    //     url: '/base/cards',
+    //     icon: 'icon-puzzle'
+    //   },
+    //   {
+    //     name: 'Carousels',
+    //     url: '/base/carousels',
+    //     icon: 'icon-puzzle'
+    //   },
+
+    //   {
+    //     name: 'Forms',
+    //     url: '/base/forms',
+    //     icon: 'icon-puzzle'
+    //   },
+
+  
+ 
+    //   {
+    //     name: 'Tables',
+    //     url: '/base/tables',
+    //     icon: 'icon-puzzle'
+    //   },
+
+
+    // ]
+  },
+  {
+    name: 'Commentaire',
+    url: '/commentaire',
     icon: 'icon-cursor',
     children: [
       {
@@ -119,44 +90,59 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Charts',
-    url: '/charts',
-    icon: 'icon-pie-chart'
+    name: 'Compte',
+    url: '/Compte',
+    icon: 'icon-calculator',
+    
   },
   {
-    name: 'Icons',
-    url: '/icons',
-    icon: 'icon-star',
-    children: [
+    name: 'Charts',
+    url: '/charts',
+    icon: 'icon-pie-chart',
+    children:[
       {
-        name: 'CoreUI Icons',
-        url: '/icons/coreui-icons',
-        icon: 'icon-star',
-        badge: {
-          variant: 'success',
-          text: 'NEW'
-        }
+        name: 'Pages',
+        url : 'charts/pages',
+        icon: 'icon-pie-chart'
       },
       {
-        name: 'Flags',
-        url: '/icons/flags',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Font Awesome',
-        url: '/icons/font-awesome',
-        icon: 'icon-star',
-        badge: {
-          variant: 'secondary',
-          text: '4.7'
-        }
-      },
-      {
-        name: 'Simple Line Icons',
-        url: '/icons/simple-line-icons',
-        icon: 'icon-star'
+        name :'Poste',
+        url: 'charts/poste',
+        icon:'icon-pie-chart'
       }
     ]
+  },
+  {
+    name: 'PostePages',
+    url: '/postePages',
+    icon: 'icon-star',
+    // children: [
+    //   {
+    //     name: 'Message',
+    //     url: '/postePages/message',
+    //     icon: 'icon-star',
+    //     badge: {
+    //       variant: 'success',
+    //       text: 'NEW'
+    //     }
+    //   },
+    //   {
+    //     name: 'Image',
+    //     url: '/postePages/image',
+    //     icon: 'icon-star'
+    //   },
+    //   {
+    //     name: 'Vidéos',
+    //     url: '/postePages/vidéos',
+    //     icon: 'icon-star',
+
+    //   },
+    //   {
+    //     name: 'Simple Line Icons',
+    //     url: '/postePages/simple-line-icons',
+    //     icon: 'icon-star'
+    //   }
+    // ]
   },
   {
     name: 'Notifications',
@@ -193,10 +179,6 @@ export const navItems: INavData[] = [
     divider: true
   },
   {
-    title: true,
-    name: 'Extras',
-  },
-  {
     name: 'Pages',
     url: '/pages',
     icon: 'icon-star',
@@ -224,28 +206,17 @@ export const navItems: INavData[] = [
     ]
   },
   {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
+    name: 'BotMessanger',
+    url: '/botMessanger',
+    icon: 'icon-drop',
+    children:[
+     {
+       name:'',
+       url: '/messanger',
+       icon:''
+     }
+    ]
   },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
-  }
+ 
+ 
 ];

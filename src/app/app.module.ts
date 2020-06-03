@@ -20,7 +20,10 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-
+import {AdminService} from './views/register/service/admin.service'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {AdminAuthGuard} from './views/guard/admin-auth.guard'
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -31,6 +34,7 @@ import {
   AppHeaderModule,
   AppFooterModule,
   AppSidebarModule,
+  
 } from '@coreui/angular';
 
 // Import routing module
@@ -40,6 +44,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { from } from 'rxjs';
 
 @NgModule({
   imports: [
@@ -54,7 +59,9 @@ import { ChartsModule } from 'ng2-charts';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
@@ -64,7 +71,7 @@ import { ChartsModule } from 'ng2-charts';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [{
+  providers: [AdminService,AdminAuthGuard,{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],

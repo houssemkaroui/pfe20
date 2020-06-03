@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="listeData" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="Options">
+    <th mat-header-cell  *matHeaderCellDef style="color: red;">Options</th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      
+      <button mat-icon-button color="warn"  (click)="supprimerUtlisateur(i,element)">
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+      
+    
+      <ng-container matColumnDef="IdPost">
+        <th mat-header-cell *matHeaderCellDef style="color: blue;"> ID Poste </th>
+        <td mat-cell *matCellDef="let element"> {{element.IdPost}} </td>
+      </ng-container>
+      <ng-container matColumnDef="message">
+        <th mat-header-cell *matHeaderCellDef style="color: blue;"> Message </th>
+        <td mat-cell *matCellDef="let element"> {{element.message}} </td>
+      </ng-container>
+      <ng-container matColumnDef="DateDeCreaction">
+        <th mat-header-cell *matHeaderCellDef style="color: blue;"> Date Publication </th>
+        <td mat-cell *matCellDef="let element"> {{element.DateDeCreaction}} </td>
+      </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+
+  <a routerLink="/Compte">Routeur</a>

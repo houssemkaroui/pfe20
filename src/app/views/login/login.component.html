@@ -6,28 +6,27 @@
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
-                <form>
-                  <h1>Login</h1>
-                  <p class="text-muted">Sign In to your account</p>
+                <form #loginForm="ngForm">
+                  <h1 class="card-title form-title">
+                    <img class="logo" src="data:image/png;base64,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" alt="logo tsunami it">
+                </h1>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="icon-user"></i></span>
+                      <span class="input-group-text" >@</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
+                    <input type="text" #nom="ngModel" [(ngModel)]="admin.email" name="email" class="form-control" placeholder="Your Email" required >      
                   </div>
                   <div class="input-group mb-4">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="icon-lock"></i></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
+                    <input type="password" #nom="ngModel" [(ngModel)]="admin.password" name="password" class="form-control" placeholder="Your Password" required >
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-primary px-4">Login</button>
+                      <button type="button" class="btn btn-primary px-4" (click)="singIN()"  [disabled]="!loginForm.form.valid">Login</button>
                     </div>
-                    <div class="col-6 text-right">
-                      <button type="button" class="btn btn-link px-0">Forgot password?</button>
-                    </div>
+
                   </div>
                 </form>
               </div>
@@ -37,7 +36,7 @@
                 <div>
                   <h2>Sign up</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <button type="button" class="btn btn-primary active mt-3">Register Now!</button>
+                  <button type="button" class="btn btn-primary active mt-3" (click)="redirection()">Register Now!</button>
                 </div>
               </div>
             </div>

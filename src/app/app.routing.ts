@@ -51,8 +51,12 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'base',
-        loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
+        path: 'Visiteur',
+        loadChildren: () => import('./views/visiteur/visiteur.module').then(m => m.VisiteurModule)
+      },
+      {
+        path: 'administrateur',
+        loadChildren: () => import('./views/administrateur/administrateur.module').then(m => m.AdministrateurModule)
       },
       {
         path: 'buttons',
@@ -81,6 +85,14 @@ export const routes: Routes = [
       {
         path: 'widgets',
         loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+      },
+      {
+        path: 'Compte',
+        loadChildren:() =>import('./views/Compte/compte.module').then(m => m.CompteModule)
+      },
+      {
+        path:'postePages',
+        loadChildren:() =>import('./views/posts/poste.module').then(m => m.PosteModule)
       }
     ]
   },
