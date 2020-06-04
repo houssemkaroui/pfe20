@@ -149,7 +149,7 @@ public PosteVisiteur = {
     //console.log(this.PosteVisiteur["idpage"])
     this.visiteur.listPosteVisiteur(this.PosteVisiteur).subscribe(HttpResponse=> { 
      // console.log(HttpResponse.body)
-      sessionStorage.setItem('salim',JSON.stringify(HttpResponse.body)) 
+      sessionStorage.setItem("salim",JSON.stringify(HttpResponse.body)) 
       // this.utilisateurData = Date;
       // this.listeData = new MatTableDataSource<Utilisateur>(this.utilisateurData)
     })

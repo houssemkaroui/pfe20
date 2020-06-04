@@ -23,7 +23,9 @@ import { RegisterComponent } from './views/register/register.component';
 import {AdminService} from './views/register/service/admin.service'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {AdminAuthGuard} from './views/guard/admin-auth.guard'
+import {AdminAuthGuard} from './views/guard/admin-auth.guard';
+
+
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -45,6 +47,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { from } from 'rxjs';
+import {MatIconModule} from '@angular/material/icon'
+
 
 @NgModule({
   imports: [
@@ -62,6 +66,7 @@ import { from } from 'rxjs';
     ChartsModule,
     FormsModule,
     HttpClientModule,
+    MatIconModule
   ],
   declarations: [
     AppComponent,

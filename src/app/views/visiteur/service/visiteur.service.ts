@@ -37,10 +37,16 @@ export class VisiteurService {
 
 
 
-  // public supprimer(id):Observable<any> {
-  //   console.log(id)
-  //   return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
-  // }
+   suprimer(visiteur) {
+
+    var poste ={
+      IDpage:visiteur['IDpage'],
+      idPoste:visiteur['idPoste']
+    }
+    
+    //console.log(id)
+    return this.http.post(`${this.apiBaseUrl}/api/pages/delete`,poste,{observe: 'response'});
+  }
 
  
 

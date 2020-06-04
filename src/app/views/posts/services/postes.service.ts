@@ -30,10 +30,10 @@ export class PostesService {
 
 
 
-  // public supprimer(id):Observable<any> {
-  //   console.log(id)
-  //   return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
-  // }
+  public supprimer(id):Observable<any> {
+    console.log(id)
+    return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
+  }
 
  
 
