@@ -1,8 +1,16 @@
 <table mat-table [dataSource]="listeData" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="Commentaire">
+    <th mat-header-cell  *matHeaderCellDef style="color:red;">Commentaire</th>
+    <td mat-cell *matCellDef="let element; let i = index;">
+      
+      <a routerLink="/Commentaire" style="color:blue;"  (click)="Commentaire(element)">Consulter</a>
+      
+    </td>
+  </ng-container>
   <ng-container matColumnDef="Options">
     <th mat-header-cell  *matHeaderCellDef style="color: red;">Options</th>
     <td mat-cell *matCellDef="let element; let i = index;">
-      <button mat-icon-button color="warn" (click)="supprimerUtlisateur(i,element)">
+      <button mat-icon-button color="warn" (click)="supprimerPoste(i,element)">
         <mat-icon>delete_outline</mat-icon>
       </button>
     </td>

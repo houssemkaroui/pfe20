@@ -8,7 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-
+import {CommentaireComponent} from './views/commentaire/commentaire.component'
 export const routes: Routes = [
   {
     path: '',
@@ -58,10 +58,7 @@ export const routes: Routes = [
         path: 'administrateur',
         loadChildren: () => import('./views/administrateur/administrateur.module').then(m => m.AdministrateurModule)
       },
-      {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
-      },
+      
       {
         path: 'charts',
         loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
@@ -93,6 +90,10 @@ export const routes: Routes = [
       {
         path:'postePages',
         loadChildren:() =>import('./views/posts/poste.module').then(m => m.PosteModule)
+      },
+      {
+        path:'Commentaire',
+        loadChildren:() =>import('./views/commentaire/commentaire.module').then(m => m.VisiteurModule)
       }
     ]
   },

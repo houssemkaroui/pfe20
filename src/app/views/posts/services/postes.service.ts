@@ -25,15 +25,34 @@ export class PostesService {
     return this.http.get(`${this.apiBaseUrl+'/api/pages/ALLPOST'}`);
   }
   
-  
-  
+  suprimer(poste) {
 
-
-
-  public supprimer(id):Observable<any> {
-    console.log(id)
-    return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
+    var POSTES ={
+      idPost:poste['idPost'],
+      Token:poste['Token']
+    }
+    
+    //console.log(id)
+    return this.http.post(`${this.apiBaseUrl}/api/pages/deleteMonPoste`,POSTES,{observe: 'response'});
   }
+
+  GetCommentPoste (comments) {
+    var COMMENTAISE = {
+      idPost:comments['idPost'],
+      Token:comments['Token']
+    }
+
+    return this.http.post(`${this.apiBaseUrl}/api/commentaire/comm`,COMMENTAISE,{observe: 'response'})
+  }
+
+  
+
+
+
+  // public supprimer(id):Observable<any> {
+  //   console.log(id)
+  //   return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
+  // }
 
  
 
