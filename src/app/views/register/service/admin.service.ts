@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable,throwError, from } from 'rxjs';
 import {Admin} from '../interface/admin'
 import * as jwt_decode from "jwt-decode";
-
+import {Email} from '../interface/email'
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class AdminService {
-
+  private email :Email
    private admin: Admin;
     apiBaseUrl: string = 'http://localhost:3000/api/admin/register';
     apibasel : String = 'http://localhost:3000'
@@ -98,6 +98,11 @@ export class AdminService {
   //   let tokenInfo =  authService.getDecodedAccessToken(authService.getToken());
   //   return tokenInfo.data;
   // }
+
+  forgetPassword (email): Observable<Email> {
+    return this.http.post<Email>(`${this.apibasel}/api/admin/forgot`, email);
+  }
+
 
 
 

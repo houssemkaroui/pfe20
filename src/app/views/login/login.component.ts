@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import {Router} from '@angular/router'
 import swal from 'sweetalert';
-
+import {Email} from '../register/interface/email'
 import { AdminService } from '../register/service/admin.service';
+import { from } from 'rxjs';
+import {ModalDirective} from 'ngx-bootstrap/modal';
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent { 
+   email = new Email;
   private admin: Object;
+  @ViewChild('myModal') public myModal: ModalDirective;
   constructor(private router: Router, private service:AdminService) {
+    
     this.admin = {
       email:'',
       password:''
@@ -45,6 +50,12 @@ export class LoginComponent {
     }
     )
   }
+
+  public ForgetPasswor () {
+    this.service.forgetPassword(this.email).subscribe((data) =>{
+      console.log(data)
+    })
+  } 
 
 
 }
