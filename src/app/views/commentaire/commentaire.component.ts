@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import {CommentaireService} from'./services/commentaire.service';
 import {Commentaire} from'./interface/commnetaire'
 import { from } from 'rxjs';
 import { MatTableDataSource } from '@angular/material';
 import swal from 'sweetalert';
 import {SelectionModel} from '@angular/cdk/collections';
-
+import {ModalDirective} from 'ngx-bootstrap/modal';
 @Component({
   templateUrl: './commnetaire.component.html',
   styleUrls: ['./commentaire.component.css']
   
 })
 export class CommentaireComponent {
+  public reponseCommentaire = {
+    idCommenatire:[],
+    idposte:'',
+    message:''
+  }
   public poste = {
     idPost:'',
     Token:'',
@@ -23,10 +28,11 @@ export class CommentaireComponent {
     Token:''
     
   }
-  //utilisateur: Utilisateur;
+
   commentaire = new Commentaire ();
-  // articleForm: FormGroup;
+ 
    utilisateurData : any =[];
+   @ViewChild('myModal') public myModal: ModalDirective;
    constructor(private service:CommentaireService) { }
 
    
@@ -57,19 +63,42 @@ export class CommentaireComponent {
   
 
   supprimerCommentaire (index:number ,e) {
-   // console.log(element.idCommentaire)
+
     
     this.comm.idCommentaire = e.idCommentaire
     console.log(e.idCommentaire)
     this.comm.idposte = JSON.parse(sessionStorage.getItem("idposteee"));
-  //  this.comm.Token = JSON.parse(sessionStorage.getItem("tokenn"));
     this.service.SupprimerCommenatier(this.comm).subscribe(Date =>{
-     // console.log(Date)
-      swal("Succès! Commentaire  été supprimé");
       this.getAll()
+      swal("Succès! Commentaire  été supprimé");
+      
     })
 
 
   }
-s
+
+  checkcommentaire (row) {
+    //this.reponseCommentaire.idCommenatire = row.idCommentaire
+    this.reponseCommentaire['idCommenatire'].push(row.idCommentaire)
+    this.reponseCommentaire.idposte = JSON.parse(sessionStorage.getItem("idposteee"));
+    console.log(this.reponseCommentaire.idCommenatire)
+
+  }
+
+  Publier( ) {
+    this.service.reepondreCommentaire(this.reponseCommentaire).subscribe(
+      data =>{
+        console.log(data)
+       swal("Succès! Poste Commenter");
+      // this.getAll()
+       
+      }
+     
+    ),
+    error => {swal("Erreur", "Erreur pendant le traitement ! Merci d'essayer de nouveau", "error");};
+  }
+
+
+  
+
 }

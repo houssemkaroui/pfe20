@@ -1,3 +1,7 @@
+<div class="example-button-row">
+  <button mat-raised-button color="primary" data-toggle="modal"  data-target="#AjouterCommentaire">Repondre</button>
+</div>
+
 <table mat-table [dataSource]="listeData"  matSort class="mat-elevation-z8">
   <ng-container matColumnDef="select">
     <th mat-header-cell *matHeaderCellDef>
@@ -5,7 +9,7 @@
       </mat-checkbox>
     </th>
     <td mat-cell *matCellDef="let row">
-      <mat-checkbox>
+      <mat-checkbox (click)="checkcommentaire(row)">
       </mat-checkbox>
     </td>
   </ng-container>
@@ -38,3 +42,31 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+
+  <form #PosteMessage="ngForm">
+    <div class="modal fade" id="AjouterCommentaire" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center" style="background-color: chocolate;">
+          <h4 class="modal-title w-100 font-weight-bold">Ajouter Une Commentaire</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+          
+            <input type="text" #nom="ngModel" [(ngModel)]="reponseCommentaire.message" class="form-control validate"  name="message" placeholder="Message" required>
+          </div>  
+         
+         
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-primary" (click) ="Publier()"  [disabled]="!PosteMessage.form.valid">Commenter</button>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  </form> 

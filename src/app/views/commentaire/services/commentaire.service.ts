@@ -44,6 +44,19 @@ export class CommentaireService {
   }
 
 
+  reepondreCommentaire (poste) {
+    var postecommentaire = {
+      idCommenatire:poste['idCommenatire'],
+      idposte:poste['idposte'],
+      message:poste['message'],
+      
+
+    }
+    return this.http.post(`${this.apiBaseUrl}/api/commentaire/comenttposte`,postecommentaire,{observe: 'response'})
+
+  }
+
+
 
   
 
