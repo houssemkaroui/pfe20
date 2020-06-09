@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {MatTableModule} from '@angular/material'
 
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
@@ -18,7 +19,8 @@ import {MatIconModule} from '@angular/material/icon'
     FormsModule,
     CommentaireRoutingModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
     
 
   ],

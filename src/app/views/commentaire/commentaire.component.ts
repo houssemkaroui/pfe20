@@ -4,6 +4,7 @@ import {Commentaire} from'./interface/commnetaire'
 import { from } from 'rxjs';
 import { MatTableDataSource } from '@angular/material';
 import swal from 'sweetalert';
+import {SelectionModel} from '@angular/cdk/collections';
 
 @Component({
   templateUrl: './commnetaire.component.html',
@@ -31,7 +32,9 @@ export class CommentaireComponent {
    
 
   listeData: MatTableDataSource<Commentaire>;
-  displayedColumns: string[] = ['idCommentaire', 'message', 'dateDeCreations','Options'];
+  displayedColumns: string[] = ['select','idCommentaire', 'message', 'dateDeCreations','Options'];
+  selection = new SelectionModel<Commentaire>(true, []);
+
   ngOnInit () {  
     this.getAll();
  
