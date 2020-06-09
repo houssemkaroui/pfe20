@@ -36,14 +36,14 @@ export class PostesService {
     return this.http.post(`${this.apiBaseUrl}/api/pages/deleteMonPoste`,POSTES,{observe: 'response'});
   }
 
-  GetCommentPoste (comments) {
-    var COMMENTAISE = {
-      idPost:comments['idPost'],
-      Token:comments['Token']
-    }
+  // GetCommentPoste (comments) {
+  //   var COMMENTAISE = {
+  //     idPost:comments['idPost'],
+  //     Token:comments['Token']
+  //   }
 
-    return this.http.post(`${this.apiBaseUrl}/api/commentaire/comm`,COMMENTAISE,{observe: 'response'})
-  }
+  //   return this.http.post(`${this.apiBaseUrl}/api/commentaire/comm`,COMMENTAISE,{observe: 'response'})
+  // }
 
   
 

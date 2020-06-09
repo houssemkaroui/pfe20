@@ -52,9 +52,22 @@ export class LoginComponent {
   }
 
   public ForgetPasswor () {
-    this.service.forgetPassword(this.email).subscribe((data) =>{
-      console.log(data)
-    })
+    this.service.forgetPassword(this.email)
+    .subscribe (
+ 
+      data =>{
+       console.log(data)
+       if(data["success"]== true) {
+        
+         swal("Succès", data["message"], "success");
+        // this.router.navigate(['login']);
+        
+       }else{
+         swal("Attention", data["message"], "warning");
+       }
+     },
+     error => { swal("Erreur! ", error, "error");}
+      );
   } 
 
 

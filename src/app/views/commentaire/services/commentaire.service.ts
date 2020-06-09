@@ -24,7 +24,24 @@ export class CommentaireService {
   }
   
   
- 
+  GetCommentPoste (comments) {
+    var COMMENTAISE = {
+      idPost:comments['idPost'],
+      Token:comments['Token']
+    }
+
+    return this.http.post(`${this.apiBaseUrl}/api/commentaire/comm`,COMMENTAISE,{observe: 'response'})
+  }
+
+
+  SupprimerCommenatier (comments) {
+    var commmm = {
+      idCommentaire:comments['idCommentaire'],
+      idposte:comments['idposte']
+    }
+
+    return this.http.post (`${this.apiBaseUrl}/api/commentaire/deletecommentaire`,commmm,{observe: 'response'})
+  }
 
 
 

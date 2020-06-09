@@ -11,13 +11,14 @@ import {CommentaireComponent} from './commentaire.component'
 
 import { CommentaireRoutingModule } from './commentaire-routing.module';
 import { from } from 'rxjs';
-
+import {MatIconModule} from '@angular/material/icon'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     CommentaireRoutingModule,
     MatTableModule,
+    MatIconModule
     
 
   ],

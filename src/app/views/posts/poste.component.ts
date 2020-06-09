@@ -23,16 +23,14 @@ export class PosteComponent {
 
   ngOnInit () {  
     this.getAll();
-    //this.id = this.route.snapshot.params['id'];
  
   }
 
   public getAll () {
     this.service.listPoste().subscribe(Date=> { 
-    //  console.log(Date)
-  
       this.PostesData = Date;
       this.listeData = new MatTableDataSource<Postes>(this.PostesData)
+      
     })
   }
 
@@ -44,7 +42,7 @@ export class PosteComponent {
     
      for(let i =0;i<p.length;i++) {
        if((p[i].idPage) == (x)){
-         //console.log(p[i].accessToken)
+        
          this.poste.Token = p[i].accessToken
        }
      }
@@ -67,18 +65,18 @@ export class PosteComponent {
 
     var x = element.idPost.substr(0,15)
     var p = JSON.parse(sessionStorage.getItem("houssem"));
-    this.poste.idPost = element.idPost;
-    //console.log(p)
+    
+    sessionStorage.setItem('idposteee',JSON.stringify(element.idPost))  
+    
     for(let i=0;i<p.length;i++){
       if ((p[i].idPage)==(x)) {
-        this.poste.Token=p[i].accessToken
+        
+        sessionStorage.setItem('tokenn',JSON.stringify(p[i].accessToken))  
      
       }
 
     }
-    this.service.GetCommentPoste(this.poste).subscribe((Date) =>{
-      console.log(Date)
-    })
+   
 
 
   }

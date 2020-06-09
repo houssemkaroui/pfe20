@@ -71,6 +71,7 @@ public PosteVisiteur = {
       sessionStorage.setItem('socialusers', JSON.stringify( user)); 
 
       this.page.GetPage(this.PAGES).subscribe((HttpResponse) =>{
+        //console.log(HttpResponse)
           
         sessionStorage.setItem('houssem',JSON.stringify(HttpResponse.body))  
       }) 
@@ -144,15 +145,18 @@ public PosteVisiteur = {
 
   azer(element) {
     var id = JSON.parse(sessionStorage.getItem("socialusers"));
-    this.PosteVisiteur["idfacebook"] = id.id 
-    this.PosteVisiteur["idpage"] = element.idPage
+    //this.PosteVisiteur["idfacebook"] = id.id 
+    sessionStorage.setItem("idFacebook",JSON.stringify(id.id )) 
+
+    //this.PosteVisiteur["idpage"] = element.idPage
+    sessionStorage.setItem("idPage",JSON.stringify(element.idPage )) 
     //console.log(this.PosteVisiteur["idpage"])
-    this.visiteur.listPosteVisiteur(this.PosteVisiteur).subscribe(HttpResponse=> { 
-     // console.log(HttpResponse.body)
-      sessionStorage.setItem("salim",JSON.stringify(HttpResponse.body)) 
-      // this.utilisateurData = Date;
-      // this.listeData = new MatTableDataSource<Utilisateur>(this.utilisateurData)
-    })
+    // this.visiteur.listPosteVisiteur(this.PosteVisiteur).subscribe(HttpResponse=> { 
+    //  // console.log(HttpResponse.body)
+    //   sessionStorage.setItem("salim",JSON.stringify(HttpResponse.body)) 
+    //   // this.utilisateurData = Date;
+    //   // this.listeData = new MatTableDataSource<Utilisateur>(this.utilisateurData)
+    // })
   }
 
   
