@@ -1,9 +1,7 @@
 <div class="example-button-row">
   <button mat-raised-button color="primary" data-toggle="modal"  data-target="#SendeNotification">Envoyer </button>
 </div>  
-<div>
-  DDDDDDDDDD
-</div>
+
 <table mat-table [dataSource]="listeData" matSort class="mat-elevation-z8">
 
   <ng-container matColumnDef="select">
@@ -22,27 +20,27 @@
 
 
     <ng-container matColumnDef="nom">
-      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Nom </th>
       <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
     </ng-container>
     <ng-container matColumnDef="prenom">
-      <th mat-header-cell *matHeaderCellDef> Prenom </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Prenom </th>
       <td mat-cell *matCellDef="let element"> {{element.prenom}} </td>
     </ng-container>
     <ng-container matColumnDef="mobile">
-      <th mat-header-cell *matHeaderCellDef > Mobile </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Mobile </th>
       <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
     </ng-container>
     <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef > Email </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Email </th>
       <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container>
     <ng-container matColumnDef="adresse">
-      <th mat-header-cell *matHeaderCellDef> Adresse </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Adresse </th>
       <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
     </ng-container>
     <ng-container matColumnDef="statut">
-      <th mat-header-cell *matHeaderCellDef> Statut </th>
+      <th mat-header-cell *matHeaderCellDef style="color: blue;"> Statut </th>
       <td mat-cell *matCellDef="let element"> {{element.statut}} </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

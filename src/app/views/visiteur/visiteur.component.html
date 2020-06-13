@@ -1,3 +1,10 @@
+<div class="example-button-row">
+  <a routerLink="/Compte">Routeur</a>
+
+</div>
+
+
+
 <table mat-table [dataSource]="listeData" matSort class="mat-elevation-z8">
   <ng-container matColumnDef="Options">
     <th mat-header-cell  *matHeaderCellDef style="color: red;">Options</th>
@@ -24,8 +31,7 @@
       
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+</table>
 
 
 
-  <a routerLink="/Compte">Routeur</a>

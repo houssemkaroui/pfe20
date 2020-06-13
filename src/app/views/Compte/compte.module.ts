@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import {MatIconModule} from '@angular/material/icon'
 import { FormsModule }   from '@angular/forms';
 
-import {MatTableModule,MatCheckboxModule, MatSelectModule} from '@angular/material'
+import {MatTableModule,MatCheckboxModule, MatSelectModule,MatButtonModule} from '@angular/material'
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
@@ -51,6 +51,7 @@ export function socialConfigs() {
     MatNativeDateModule,
     MatSelectModule,
     FormsModule,
+    MatButtonModule,
     MDBBootstrapModule.forRoot()
   ],
   declarations: [ CompteComponent ],

@@ -1,4 +1,6 @@
 
+
+
 <div >  
   <img type="button" (click)="socialSignIn()" class="logo" src="https://i.stack.imgur.com/oL5c2.png" alt="logo tsunami it">
 
@@ -6,7 +8,7 @@
       <button type="button" (click)="signOut()"  mat-flat-button color="primary">Sign Out From Facebook</button>
         Login with Facebook   -->
 </div>  
-<div>
+
   <table mat-table [dataSource]="listeData"  class="mat-elevation-z8" >
     <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
@@ -40,13 +42,13 @@
   
 
   <div class="example-button-row">
-    <button mat-raised-button color="primary" data-toggle="modal"  data-target="#AjouterMessage">Ajouter Message</button>
+    <button mat-raised-button color="primary" data-toggle="modal"  data-target="#AjouterMessage" >Ajouter Message</button>
     <button mat-raised-button color="primary" data-toggle="modal"  data-target="#AjouterImage">Ajouter Image</button>
     <button mat-raised-button color="primary" data-toggle="modal"  data-target="#AjouterVedio">Ajouter Video</button>
   
   </div>
 
-</div>
+
 
 <!-- poster une message -->
 

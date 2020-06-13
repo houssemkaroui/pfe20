@@ -22,6 +22,11 @@
   }
 
 
-   table .example-button-row button {
-    margin-right: 20px;
-  }
+   .example-button-row{
+    margin: 20px;
+    padding: 10px;
+   
+    width: 50%;
+    right: 50%;
+  
+   }
