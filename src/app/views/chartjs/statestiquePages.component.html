@@ -1,0 +1,47 @@
+<div class="col-sm-6 col-lg-3">
+    <div class="card text-white bg-info">
+      <div class="card-body pb-0">
+        <button type="button" class="btn btn-transparent p-0 float-right">
+          <i class="icon-location-pin"></i>
+        </button>
+        <div class="text-value">{{ this.nombrejaime.likeNombre}}</div>
+        <div>Nombre de Jaime</div>
+      </div>
+      <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
+        <canvas baseChart class="chart"
+        [datasets]="lineChart2Data"
+        
+       
+        [colors]="lineChart2Colours"
+       
+       ></canvas>
+      </div>
+    </div>
+  </div><!--/.col-->
+
+
+
+  <!-- <div style="width: 80%;">
+    <canvas
+        baseChart
+        [chartType]="'line'"
+        [datasets]="chartData"
+        [labels]="chartLabels"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartClick)="onChartClick($event)">
+    </canvas>
+  </div> -->
+
+
+
+  <div class="chart-wrapper">
+    <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>

@@ -38,56 +38,13 @@ export const navItems: INavData[] = [
     name: 'Visiteur',
     url: '/Visiteur',
     icon: 'icon-puzzle',
-    // children: [
-    //   {
-    //     name: 'Cards',
-    //     url: '/base/cards',
-    //     icon: 'icon-puzzle'
-    //   },
-    //   {
-    //     name: 'Carousels',
-    //     url: '/base/carousels',
-    //     icon: 'icon-puzzle'
-    //   },
 
-    //   {
-    //     name: 'Forms',
-    //     url: '/base/forms',
-    //     icon: 'icon-puzzle'
-    //   },
-
-  
- 
-    //   {
-    //     name: 'Tables',
-    //     url: '/base/tables',
-    //     icon: 'icon-puzzle'
-    //   },
-
-
-    // ]
   },
   {
     name: 'Commentaire',
     url: '/Commentaire',
     icon: 'icon-cursor',
-    // children: [
-    //   {
-    //     name: 'Buttons',
-    //     url: '/buttons/buttons',
-    //     icon: 'icon-cursor'
-    //   },
-    //   {
-    //     name: 'Dropdowns',
-    //     url: '/buttons/dropdowns',
-    //     icon: 'icon-cursor'
-    //   },
-    //   {
-    //     name: 'Brand Buttons',
-    //     url: '/buttons/brand-buttons',
-    //     icon: 'icon-cursor'
-    //   }
-    // ]
+   
   },
   {
     name: 'Compte',
@@ -102,12 +59,12 @@ export const navItems: INavData[] = [
     children:[
       {
         name: 'Pages',
-        url : 'charts/pages',
+        url : '/charts/Pages',
         icon: 'icon-pie-chart'
       },
       {
         name :'Poste',
-        url: 'charts/poste',
+        url: '/charts/Poste',
         icon:'icon-pie-chart'
       }
     ]

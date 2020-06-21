@@ -57,7 +57,7 @@ public PosteVisiteur = {
   }
 
   listeData: MatTableDataSource<Pages>;
-  displayedColumns: string[] = ['select','namePage', 'idPage','Poste Visiteur'];
+  displayedColumns: string[] = ['select','namePage', 'idPage','Poste Visiteur','Statestique'];
   selection = new SelectionModel<Pages>(true, []);
 
   public socialSignIn(socialProvider: string) {    
@@ -162,6 +162,20 @@ public PosteVisiteur = {
   
 
  // public getAll () {
+
+  applyFilter(filterValue: string) {
+    this.listeData.filter = filterValue.trim().toLowerCase();
+  }
+
+  Statestique (element) {
+    var id = JSON.parse(sessionStorage.getItem("socialusers"));
+    //this.PosteVisiteur["idfacebook"] = id.id 
+    sessionStorage.setItem("idUseStatq",JSON.stringify(id.id )) 
+
+    sessionStorage.setItem("StatestiquePage",JSON.stringify(element.idPage ))
+    this.router.navigate(['charts/Pages'])
+  
+  }
     
  
 }

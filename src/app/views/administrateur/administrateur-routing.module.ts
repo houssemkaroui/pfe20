@@ -12,10 +12,10 @@ const routes: Routes = [
         title: 'Administrateur'
       },
       children: [
-        {
-          path: '',
-          redirectTo: 'utilisateur'
-        },
+        // {
+        //   path: '',
+        //   redirectTo: 'utilisateur'
+        // },
         {
           path: 'utilisateur',
           component: UtilisateurComponent,
