@@ -5,9 +5,7 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import {ModalDirective} from 'ngx-bootstrap/modal';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
 import { Router } from '@angular/router';
-import { ActivatedRoute, Params } from '@angular/router';
 import {StatestiqueService} from './service/statistique.service'
-import { from } from 'rxjs';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 @Component({
@@ -19,20 +17,38 @@ export class StatestiquePages     {
     idUser:'',
     idpage:''
    }
-  //  public veuxpage = {
-  //   idUser:'',
-  //   idpage:''
-  //  }
+ 
    nombrejaime : any ='';
    nommbrevu : any ='';
   value :any =''
-  table : any=[]
+  nombreAffich: any =''
+
+
+
+ 
+  
+  
   constructor( private service: StatestiqueService) { }
   ngOnInit() {
     this. getJaimPage()
     this.getnombreVu()
+    this.getnombreAfficher()
   
   }
+  public lineChart2Data: Array<any> = [
+    {
+      data: [1, 18, 9, 17, 34, 22, 11],
+      label: 'Series A'
+    }
+  ];
+ 
+  public lineChart2Colours: Array<any> = [
+    { // grey
+      backgroundColor: getStyle('--info'),
+      borderColor: 'rgba(255,255,255,.55)'
+    }
+  ];
+ 
 
   getJaimPage () {
     this.jaimePage.idUser = JSON.parse(sessionStorage.getItem("idUseStatq"));
@@ -53,6 +69,11 @@ export class StatestiquePages     {
   barChartType: ChartType = 'bar';
   barChartLegend = true;
   barChartPlugins = [];
+  public pieChartColors = [
+    {
+      backgroundColor: [],
+    },
+  ];
   
    public barChartData: ChartDataSets[] = [
     { data: [0], label: 'The number of times any content from your Page' }
@@ -63,20 +84,17 @@ export class StatestiquePages     {
     this.jaimePage.idUser = JSON.parse(sessionStorage.getItem("idUseStatq"));
     this.jaimePage.idpage = JSON.parse(sessionStorage.getItem("StatestiquePage"));
     this.service.getStatestique(this.jaimePage).subscribe((data) =>{
-     // console.log(data.body)
       this.nommbrevu = data.body
-      console.log(this.nommbrevu)
+      
 
       this.nommbrevu.forEach((dataset) => {
         this.barChartData[0]['data'].unshift(dataset.values[0].value)
-        //this.value = dataset.values[0].value
-       // this.table.push(this.value)
-       
+        var color = "#"+((1<<24)*Math.random()|0).toString(16);
+          this.pieChartColors[0]['backgroundColor'].unshift(color)
+   
         
       });
-     // this.table.push(this.value)
-     // console.log( this.table)
-      
+    
       
      
 
@@ -87,33 +105,60 @@ export class StatestiquePages     {
   }
 
 
- lineChart2
-  public lineChart2Data: Array<any> = [
+
+
+
+
+  pieChartOptions: ChartOptions = {
+    responsive: true,
+  };
+  //pieChartLabels: Label[] = ['28 Days', 'Week', 'Day'];
+  //pieChartType: ChartType = 'pie';
+  pieChartLegend = true;
+  pieChartPlugins = [];
+  public barChartColors = [
     {
-      data: [1, 18, 9, 17, 34, 22, 11],
-      label: 'Series A'
-    }
+      backgroundColor: [],
+    },
   ];
+  
  
-  public lineChart2Colours: Array<any> = [
-    { // grey
-      backgroundColor: getStyle('--info'),
-      borderColor: 'rgba(255,255,255,.55)'
-    }
+  public pieChartLabels: Label[] = ['28 Days', 'Week', 'Day'];
+  public pieChartData: ChartDataSets[] = [
+    { data: [0], label: 'The number of times any content from your Page' }
   ];
- public lineChart2Legend = false;
- public lineChart2Type = 'line';
+
+ 
+  public pieChartType = 'pie';
 
 
-//  chartOptions = {
-//   responsive: true
-// };
-// chartData = [
-//   { data: ['this.table[0]','this.table[0]','this.table[0]'], label: 'Daily: The number of times any content from your Page' },
-//   { data: ['this.table[0]','this.table[1]','this.table[0]'], label: 'Weekly: The number of times any content from your Page' },
-//   { data: ['this.table[0]','this.table[1]','this.table[2]'], label: '28 Days: The number of times any content from your Page' }
-// ];
-// chartLabels = ['Day', 'week', 'days_28'];
+  getnombreAfficher () {
+    this.jaimePage.idUser = JSON.parse(sessionStorage.getItem("idUseStatq"));
+    this.jaimePage.idpage = JSON.parse(sessionStorage.getItem("StatestiquePage"));
+    this.service.GETSTATPAGE(this.jaimePage).subscribe((data) =>{
+      //console.log(data.body)
+      this.nombreAffich = data.body
+      
+
+      this.nombreAffich.forEach((dataset) => {
+        this.pieChartData[0]['data'].unshift(dataset.values[0].value)
+        
+        var color = "#"+((1<<24)*Math.random()|0).toString(16);
+          this.pieChartColors[0]['backgroundColor'].unshift(color)
+   
+        
+      });
+
+    })
+
+  }
+
+
+ 
+ 
+
+
+
 
 
 

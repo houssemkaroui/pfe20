@@ -28,6 +28,16 @@ export class StatestiqueService {
 
   }
 
+  GETSTATPAGE(nombre) {
+    var nombreConnes = {
+      idUser:nombre['idUser'],
+      idpage:nombre['idpage']
+    }
+
+    return this.http.post(`${this.apiBaseUrl}/api/statestique/PublicationAfficher`,nombreConnes, {observe :'response'});
+
+  }
+
 
   
 
