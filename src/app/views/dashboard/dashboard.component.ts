@@ -8,6 +8,7 @@ import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 export class DashboardComponent implements OnInit {
 
   radioModel: string = 'Month';
+  imegUser : any ='';
 
   // lineChart1
   public lineChart1Data: Array<any> = [
@@ -384,5 +385,11 @@ export class DashboardComponent implements OnInit {
       this.mainChartData2.push(this.random(80, 100));
       this.mainChartData3.push(65);
     }
+
+    var img = JSON.parse(sessionStorage.getItem("socialusers"));
+    //this.PosteVisiteur["idfacebook"] = id.id 
+    this.imegUser=sessionStorage.setItem("idUseStatq",JSON.stringify(img.image )) 
   }
+
+
 }

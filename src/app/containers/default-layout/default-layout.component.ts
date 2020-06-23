@@ -8,8 +8,22 @@ import { navItems } from '../../_nav';
 export class DefaultLayoutComponent {
   public sidebarMinimized = false;
   public navItems = navItems;
+  imegUser : any ='';
 
   toggleMinimize(e) {
     this.sidebarMinimized = e;
   }
+
+  ngOnInit(): void {
+   var img = JSON.parse(sessionStorage.getItem("socialusers"));
+   
+ 
+    this.imegUser=img.image
+    console.log(this.imegUser)
+
+  }
+    // generate random values for mainChart
+    
+
+  
 }
