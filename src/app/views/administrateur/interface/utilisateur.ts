@@ -6,5 +6,6 @@ export class Utilisateur {
      mobile :string
     email :string
     adresse: string
+    position:number
 
 }

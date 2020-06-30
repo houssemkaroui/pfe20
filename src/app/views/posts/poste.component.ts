@@ -30,6 +30,14 @@ export class PosteComponent {
     this.service.listPoste().subscribe(Date=> { 
       this.PostesData = Date;
       this.listeData = new MatTableDataSource<Postes>(this.PostesData)
+      this.PostesData.forEach(element => {
+        console.log(element.DateDePublication)
+        if(element.DateDePublication != null) 
+
+         element.DateDePublication = new window.Date(element.DateDePublication).toUTCString()
+
+        
+      });
       
     })
   }

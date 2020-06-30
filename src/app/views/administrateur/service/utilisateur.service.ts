@@ -38,12 +38,10 @@ export class UtilisateurService {
     return this.http.delete(`${this.apiBaseUrl}/api/utilisateur/suprimerUtilisateur/${id}`);
   }
 
-  public modifierTalent(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.apiBaseUrl}/${id}`, value);
-  
+
+  public updateOffre(offre) {
+    return this.http.put(`${this.apiBaseUrl}/update-student/${offre._id}`, offre ,{observe :'response'});
   }
-
-
 
 
  

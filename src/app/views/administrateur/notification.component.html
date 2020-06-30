@@ -11,7 +11,8 @@
     </th>
     <td mat-cell *matCellDef="let row">
       <mat-checkbox 
-                    (click)="onchange(row)"
+                   
+                    (change)="onchange($event,row)"
                    
                     >
       </mat-checkbox>
@@ -47,7 +48,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-<!-- send un notification -->
+
 
   <div class="modal fade" id="SendeNotification" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
